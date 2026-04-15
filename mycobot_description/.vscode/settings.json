@@ -1,0 +1,7 @@
+{
+    // other settings
+    "urdf-visualizer.packages": {
+        "fake_robot": "${pro450_isaacsim_ws}/src/mycobot_description"
+    },
+    // other settings
+  }
