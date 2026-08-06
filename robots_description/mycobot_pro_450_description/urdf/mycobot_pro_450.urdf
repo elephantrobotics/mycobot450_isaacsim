@@ -4,15 +4,8 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="mycobot_pro450">
-  <!-- 新增一个 root -->
-  <!-- <link name="world"/>
-
-  <joint name="world_to_base" type="fixed">
-    <parent link="world"/>
-    <child link="base"/>
-  </joint> -->
   <link
-    name="base">
+    name="base_link">
     <inertial>
       <origin
         xyz="-0.01511 4.6971E-05 0.064112"
@@ -33,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/base.STL" />
+          filename="package://mycobot_pro_450_description/meshes/base.STL" />
       </geometry>
       <material
         name="">
@@ -47,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/base.STL" />
+          filename="package://mycobot_pro_450_description/meshes/base.STL" />
       </geometry>
     </collision>
   </link>
@@ -73,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link1.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link1.STL" />
       </geometry>
       <material
         name="">
@@ -87,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link1.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link1.STL" />
       </geometry>
     </collision>
   </link>
@@ -98,7 +91,7 @@
       xyz="-0.00093304 0 0.17372"
       rpy="0 0 0" />
     <parent
-      link="base" />
+      link="base_link" />
     <child
       link="Link1" />
     <axis
@@ -131,7 +124,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link2.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link2.STL" />
       </geometry>
       <material
         name="">
@@ -145,7 +138,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link2.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link2.STL" />
       </geometry>
     </collision>
   </link>
@@ -189,7 +182,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link3.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link3.STL" />
       </geometry>
       <material
         name="">
@@ -203,7 +196,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link3.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link3.STL" />
       </geometry>
     </collision>
   </link>
@@ -247,7 +240,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link4.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link4.STL" />
       </geometry>
       <material
         name="">
@@ -261,7 +254,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link4.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link4.STL" />
       </geometry>
     </collision>
   </link>
@@ -305,7 +298,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link5.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link5.STL" />
       </geometry>
       <material
         name="">
@@ -319,7 +312,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link5.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link5.STL" />
       </geometry>
     </collision>
   </link>
@@ -363,7 +356,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link6.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link6.STL" />
       </geometry>
       <material
         name="">
@@ -377,7 +370,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mycobot_description/meshes/Link6.STL" />
+          filename="package://mycobot_pro_450_description/meshes/Link6.STL" />
       </geometry>
     </collision>
   </link>
