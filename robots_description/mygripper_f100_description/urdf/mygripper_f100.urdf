@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
-     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="3.6">
+  name="mygripper_f100">
   <link
-    name="base_link">
+    name="f100_base_link">
     <inertial>
       <origin
-        xyz="-0.0207848626629978 -0.00121450514511264 0.0161654716688051"
+        xyz="0.0439 0.001507 0.014638"
         rpy="0 0 0" />
       <mass
-        value="0.0647890543635649" />
+        value="0.251" />
       <inertia
-        ixx="7.24565029565667E-05"
-        ixy="-8.92980648808349E-09"
-        ixz="3.82207722360367E-06"
-        iyy="7.16593649430301E-05"
-        iyz="1.83577590746169E-08"
-        izz="8.71822986311128E-05" />
+        ixx="0.00024"
+        ixy="2E-05"
+        ixz="0.000144"
+        iyy="0.000729"
+        iyz="4.678E-06"
+        izz="0.00071" />
     </inertial>
     <visual>
       <origin
@@ -26,12 +26,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/base_link.STL" />
+          filename="package://mygripper_f100_description/meshes/f100_base_link.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+          rgba="0.69804 0.69804 0.69804 1" />
       </material>
     </visual>
     <collision>
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/base_link.STL" />
+          filename="package://mygripper_f100_description/meshes/f100_base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -48,17 +48,17 @@
     name="J2_L_Link">
     <inertial>
       <origin
-        xyz="0.0235917643533608 0.00478203636993705 -2.98375229058891E-09"
+        xyz="0.016477 -0.000609 5.1E-05"
         rpy="0 0 0" />
       <mass
-        value="0.0106787406466507" />
+        value="0.015" />
       <inertia
-        ixx="6.13026265820888E-07"
-        ixy="6.23082706961019E-07"
-        ixz="1.41334773174543E-11"
-        iyy="4.63516263127006E-06"
-        iyz="-6.91478707717136E-12"
-        izz="5.16141123880658E-06" />
+        ixx="1E-06"
+        ixy="-9.61E-07"
+        ixz="0"
+        iyy="1.1E-05"
+        iyz="0"
+        izz="1.26E-05" />
     </inertial>
     <visual>
       <origin
@@ -71,7 +71,7 @@
       <material
         name="">
         <color
-          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+          rgba="0.69804 0.69804 0.69804 1" />
       </material>
     </visual>
     <collision>
@@ -88,10 +88,10 @@
     name="J2_L_Joint"
     type="revolute">
     <origin
-      xyz="-0.00199539964651109 0.0170897105451218 0"
-      rpy="0 0 -0.161189635313468" />
+      xyz="0.056064 0.017111 0"
+      rpy="0 0 0.00036257" />
     <parent
-      link="base_link" />
+      link="f100_base_link" />
     <child
       link="J2_L_Link" />
     <axis
@@ -106,17 +106,17 @@
     name="J3_L_Link">
     <inertial>
       <origin
-        xyz="0.000603029200864795 0.0109696754112436 0.000499981698630438"
+        xyz="0.004031 0.00831 -0.000115"
         rpy="0 0 0" />
       <mass
-        value="0.0122763514806654" />
+        value="0.017" />
       <inertia
-        ixx="1.42853162540088E-06"
-        ixy="-1.5763562411517E-06"
-        ixz="-5.26622606252965E-12"
-        iyy="3.98499307408675E-06"
-        iyz="-1.66145124027413E-11"
-        izz="4.81619145664605E-06" />
+        ixx="3.579E-06"
+        ixy="-2E-06"
+        ixz="2E-08"
+        iyy="6.6E-06"
+        iyz="-2.3E-08"
+        izz="9.273E-06" />
     </inertial>
     <visual>
       <origin
@@ -129,7 +129,7 @@
       <material
         name="">
         <color
-          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+          rgba="0.69804 0.69804 0.69804 1" />
       </material>
     </visual>
     <collision>
@@ -146,8 +146,8 @@
     name="J3_L_Joint"
     type="revolute">
     <origin
-      xyz="0.0607879914104711 0 -0.000499999999989536"
-      rpy="0 0 -0.70066916574601" />
+      xyz="0.059996 -0.0097778 -0.0005"
+      rpy="0 0 0" />
     <parent
       link="J2_L_Link" />
     <child
@@ -165,20 +165,20 @@
       offset="0" />
   </joint>
   <link
-    name="SL_Link">
+    name="SL_L_Link">
     <inertial>
       <origin
-        xyz="0.0328871429903989 0.00224269862055692 2.6204360224659E-10"
+        xyz="0.032595 -0.003043 0"
         rpy="0 0 0" />
       <mass
-        value="0.00541710785809107" />
+        value="0.006" />
       <inertia
-        ixx="1.14737723568243E-07"
-        ixy="1.52800706433735E-07"
-        ixz="9.34157716253718E-14"
-        iyy="1.96223354946848E-06"
-        iyz="-1.71046931636226E-14"
-        izz="2.03590480756749E-06" />
+        ixx="2.84E-07"
+        ixy="-1.059E-06"
+        ixz="0"
+        iyy="8.28E-06"
+        iyz="0"
+        izz="8.52E-06" />
     </inertial>
     <visual>
       <origin
@@ -186,12 +186,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/SL_Link.STL" />
+          filename="package://mygripper_f100_description/meshes/SL_L_Link.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+          rgba="0.69804 0.69804 0.69804 1" />
       </material>
     </visual>
     <collision>
@@ -200,7 +200,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/SL_Link.STL" />
+          filename="package://mygripper_f100_description/meshes/SL_L_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -208,12 +208,12 @@
     name="SL_Joint"
     type="revolute">
     <origin
-      xyz="-0.0243107456319108 0.0431815900188018 0"
-      rpy="0 0 -0.162249613278239" />
+      xyz="0.033748 0.043203 0"
+      rpy="0 0 0.00036257" />
     <parent
-      link="base_link" />
+      link="f100_base_link" />
     <child
-      link="SL_Link" />
+      link="SL_L_Link" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -230,17 +230,17 @@
     name="J2_R_Link">
     <inertial>
       <origin
-        xyz="0.023591801843199 -0.00478200859130942 -5.92605961139855E-09"
+        xyz="0.019829 0.000952 -0.000143"
         rpy="0 0 0" />
       <mass
-        value="0.0106787331581622" />
+        value="0.013" />
       <inertia
-        ixx="6.13035867933717E-07"
-        ixy="-6.23073080599219E-07"
-        ixz="1.380514477927E-11"
-        iyy="4.63511012225839E-06"
-        iyz="7.59756951674325E-12"
-        izz="5.16136845895909E-06" />
+        ixx="1.239E-06"
+        ixy="9.88E-07"
+        ixz="0"
+        iyy="1.1158E-05"
+        iyz="0"
+        izz="1.2285E-05" />
     </inertial>
     <visual>
       <origin
@@ -253,7 +253,7 @@
       <material
         name="">
         <color
-          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+          rgba="0.69804 0.69804 0.69804 1" />
       </material>
     </visual>
     <collision>
@@ -267,13 +267,13 @@
     </collision>
   </link>
   <joint
-    name="J2_R_Joint"
+    name="J2_R_joint"
     type="revolute">
     <origin
-      xyz="-0.0019953996465111 -0.0195302894548782 0"
-      rpy="0 0 0.161189632982069" />
+      xyz="0.056064 -0.019509 0"
+      rpy="0 0 0" />
     <parent
-      link="base_link" />
+      link="f100_base_link" />
     <child
       link="J2_R_Link" />
     <axis
@@ -292,17 +292,17 @@
     name="J3_R_Link">
     <inertial>
       <origin
-        xyz="0.000602945976949057 -0.0109695401946756 0.000499936874732379"
+        xyz="0.004379 -0.008394 -7.5E-05"
         rpy="0 0 0" />
       <mass
-        value="0.0122762764991077" />
+        value="0.018" />
       <inertia
-        ixx="1.42847427674334E-06"
-        ixy="1.57631563634001E-06"
-        ixz="8.63069041856991E-12"
-        iyy="3.98500318852884E-06"
-        iyz="-3.79972863024845E-12"
-        izz="4.81614935880547E-06" />
+        ixx="3.659E-06"
+        ixy="1.93E-06"
+        ixz="1.1E-08"
+        iyy="6.726E-06"
+        iyz="1.2E-08"
+        izz="9.479E-06" />
     </inertial>
     <visual>
       <origin
@@ -315,7 +315,7 @@
       <material
         name="">
         <color
-          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+          rgba="0.69804 0.69804 0.69804 1" />
       </material>
     </visual>
     <collision>
@@ -329,11 +329,11 @@
     </collision>
   </link>
   <joint
-    name="J3_R_Joint"
+    name="J3_R_joint"
     type="revolute">
     <origin
-      xyz="0.060788 0 -0.0005"
-      rpy="0 0 0.70082" />
+      xyz="0.06 0.009756 0"
+      rpy="0 0 0" />
     <parent
       link="J2_R_Link" />
     <child
@@ -346,25 +346,25 @@
       effort="0"
       velocity="0" />
     <mimic
-      joint="J2_R_Joint"
-      multiplier="-1"
+      joint="J2_L_Joint"
+      multiplier="1"
       offset="0" />
   </joint>
   <link
-    name="SR_Link">
+    name="SL_R_Link">
     <inertial>
       <origin
-        xyz="0.0328871436076625 -0.00224269757643595 -3.31779308061208E-10"
+        xyz="0.032592 0.003077 5E-05"
         rpy="0 0 0" />
       <mass
-        value="0.00541710733570484" />
+        value="0.006" />
       <inertia
-        ixx="1.14737457541037E-07"
-        ixy="-1.52800716791017E-07"
-        ixz="4.45704989673605E-15"
-        iyy="1.96223353447849E-06"
-        iyz="-1.03309460705882E-14"
-        izz="2.03590453105562E-06" />
+        ixx="2.87E-07"
+        ixy="1.067E-06"
+        ixz="1E-08"
+        iyy="8.278E-06"
+        iyz="1E-09"
+        izz="8.52E-06" />
     </inertial>
     <visual>
       <origin
@@ -372,12 +372,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/SR_Link.STL" />
+          filename="package://mygripper_f100_description/meshes/SL_R_Link.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+          rgba="0.69804 0.69804 0.69804 1" />
       </material>
     </visual>
     <collision>
@@ -386,20 +386,20 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/SR_Link.STL" />
+          filename="package://mygripper_f100_description/meshes/SL_R_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="SR_Joint"
+    name="SL_R_joint"
     type="revolute">
     <origin
-      xyz="-0.0243107456319108 -0.0456021689285581 0"
-      rpy="0 0 0.161861881320173" />
+      xyz="0.033748 -0.045581 0"
+      rpy="0 0 0" />
     <parent
-      link="base_link" />
+      link="f100_base_link" />
     <child
-      link="SR_Link" />
+      link="SL_R_Link" />
     <axis
       xyz="0 0 -1" />
     <limit

@@ -90,12 +90,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        SR_Link:
+        SL_R_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_link:
+        f100_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -125,9 +125,9 @@ Visualization Manager:
           Value: true
         SL_Link:
           Value: true
-        SR_Link:
+        SL_R_Link:
           Value: true
-        base_link:
+        f100_base_link:
           Value: true
       Marker Scale: 0.15000000596046448
       Name: TF
@@ -135,7 +135,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
+        f100_base_link:
           J2_L_Link:
             J3_L_Link:
               {}
@@ -144,14 +144,14 @@ Visualization Manager:
               {}
           SL_Link:
             {}
-          SR_Link:
+          SL_R_Link:
             {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: f100_base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -194,16 +194,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 0.3124156594276428
+      Distance: 0.43260106444358826
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.04740279167890549
+        Y: -0.011674845591187477
+        Z: -0.025263458490371704
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
