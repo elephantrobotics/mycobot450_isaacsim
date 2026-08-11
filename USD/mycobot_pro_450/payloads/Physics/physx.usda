@@ -31,42 +31,247 @@ over "mycobot_pro450"
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
+            float drive:angular:physics:damping = 50
+            float drive:angular:physics:stiffness = 500000
+            float drive:angular:physics:targetPosition = 0
+            bool[] isaac:actuator (
+                displayName = "Actuator"
+            )
+            string isaac:NameOverride (
+                displayName = "Joint Name Override"
+            )
+            token[] isaac:physics:DofOffsetOpOrder (
+                displayName = "Dof Offset Op Order"
+            )
+            float physics:lowerLimit = -162
+            float physics:upperLimit = 162
             float physxJoint:maxJointVelocity = 149.98889
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint2" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
+            float drive:angular:physics:damping = 50
+            float drive:angular:physics:stiffness = 500000
+            float drive:angular:physics:targetPosition = 0
+            bool[] isaac:actuator (
+                displayName = "Actuator"
+            )
+            string isaac:NameOverride (
+                displayName = "Joint Name Override"
+            )
+            token[] isaac:physics:DofOffsetOpOrder (
+                displayName = "Dof Offset Op Order"
+            )
+            float physics:lowerLimit = -125
+            float physics:upperLimit = 125
             float physxJoint:maxJointVelocity = 149.98889
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint3" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
+            float drive:angular:physics:damping = 50
+            float drive:angular:physics:stiffness = 50000
+            float drive:angular:physics:targetPosition = 0
+            bool[] isaac:actuator (
+                displayName = "Actuator"
+            )
+            string isaac:NameOverride (
+                displayName = "Joint Name Override"
+            )
+            token[] isaac:physics:DofOffsetOpOrder (
+                displayName = "Dof Offset Op Order"
+            )
+            float physics:lowerLimit = -154
+            float physics:upperLimit = 154
             float physxJoint:maxJointVelocity = 149.98889
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint4" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
+            float drive:angular:physics:damping = 0.5
+            float drive:angular:physics:stiffness = 500
+            float drive:angular:physics:targetPosition = 0
+            bool[] isaac:actuator (
+                displayName = "Actuator"
+            )
+            string isaac:NameOverride (
+                displayName = "Joint Name Override"
+            )
+            token[] isaac:physics:DofOffsetOpOrder (
+                displayName = "Dof Offset Op Order"
+            )
+            float physics:lowerLimit = -162
+            float physics:upperLimit = 162
             float physxJoint:maxJointVelocity = 149.98889
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint5" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
+            float drive:angular:physics:damping = 0.5
+            float drive:angular:physics:stiffness = 500
+            float drive:angular:physics:targetPosition = 0
+            bool[] isaac:actuator (
+                displayName = "Actuator"
+            )
+            string isaac:NameOverride (
+                displayName = "Joint Name Override"
+            )
+            token[] isaac:physics:DofOffsetOpOrder (
+                displayName = "Dof Offset Op Order"
+            )
+            float physics:lowerLimit = -162
+            float physics:upperLimit = 162
             float physxJoint:maxJointVelocity = 149.98889
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint6" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:stiffness = 50
+            float drive:angular:physics:targetPosition = 0
+            bool[] isaac:actuator (
+                displayName = "Actuator"
+            )
+            string isaac:NameOverride (
+                displayName = "Joint Name Override"
+            )
+            token[] isaac:physics:DofOffsetOpOrder (
+                displayName = "Dof Offset Op Order"
+            )
+            float physics:lowerLimit = -165
+            float physics:upperLimit = 165
             float physxJoint:maxJointVelocity = 149.98889
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+    }
+
+    over "Geometry" (
+        delete apiSchemas = ["PhysicsFilteredPairsAPI"]
+        prepend apiSchemas = ["PhysxArticulationAPI"]
+    )
+    {
+        float physxArticulation:sleepThreshold = 0.00005
+        int physxArticulation:solverPositionIterationCount = 64
+        int physxArticulation:solverVelocityIterationCount = 4
+        float physxArticulation:stabilizationThreshold = 0.00001
+
+        over "base_link" (
+            prepend apiSchemas = ["PhysxRigidBodyAPI"]
+        )
+        {
+            string isaac:nameOverride (
+                displayName = "Name Override"
+            )
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            float physxRigidBody:sleepThreshold = 0.005
+            int physxRigidBody:solverPositionIterationCount = 16
+            int physxRigidBody:solverVelocityIterationCount = 1
+            float physxRigidBody:stabilizationThreshold = 0.001
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:translate = (0, 0, 0)
+
+            over "Link1"
+            {
+                string isaac:nameOverride (
+                    displayName = "Name Override"
+                )
+                vector3f physics:angularVelocity = (2.5930948e-15, -1.7756477e-14, -7.229136e-8)
+                rel physics:simulationOwner
+                vector3f physics:velocity = (-3.393788e-11, 7.3176903e-13, -1.3970741e-18)
+                quatf xformOp:orient = (0.9997986, -3.2381333e-9, -2.2787876e-8, -0.020069778)
+                double3 xformOp:translate = (1.862645149230957e-9, -1.862645149230957e-9, 0.20999999344348907)
+
+                over "Link2"
+                {
+                    string isaac:nameOverride (
+                        displayName = "Name Override"
+                    )
+                    vector3f physics:angularVelocity = (-4.532411e-9, -1.1284607e-7, -7.229304e-8)
+                    rel physics:simulationOwner
+                    vector3f physics:velocity = (-3.6074335e-10, 1.1976577e-11, 3.920704e-12)
+                    quatf xformOp:orient = (-0.49649686, -0.49649757, -0.50347805, 0.50347877)
+                    double3 xformOp:translate = (1.969067353613241e-9, -5.513357770325911e-9, -1.6653345369377348e-16)
+
+                    over "Link3"
+                    {
+                        vector3f physics:angularVelocity = (-1.3633243e-8, -3.3943223e-7, -7.228798e-8)
+                        rel physics:simulationOwner
+                        vector3f physics:velocity = (-1.0454695e-9, 3.744615e-11, 1.142369e-11)
+                        quatf xformOp:orient = (0.99999845, -2.1729278e-8, -4.429119e-8, 0.001745243)
+                        double3 xformOp:translate = (-0.17921964824199677, 2.4555548705507135e-8, -9.39338828942482e-9)
+
+                        over "Link4"
+                        {
+                            vector3f physics:angularVelocity = (-2.3969204e-8, -5.9672783e-7, -7.227984e-8)
+                            rel physics:simulationOwner
+                            vector3f physics:velocity = (-1.5060367e-9, 2.764329e-11, 2.418347e-10)
+                            quatf xformOp:orient = (0.7448839, -7.0861866e-8, 3.8459458e-8, -0.6671941)
+                            double3 xformOp:translate = (-0.17378030717372894, 0.0000053130124797462486, 0.08549055457115173)
+
+                            over "Link5"
+                            {
+                                vector3f physics:angularVelocity = (-2.3807196e-8, -5.967201e-7, -7.3858395e-8)
+                                rel physics:simulationOwner
+                                vector3f physics:velocity = (-2.4462383e-9, 1.1585694e-10, -1.7263373e-10)
+                                quatf xformOp:orient = (0.47725746, 0.4772594, -0.5217504, 0.5217521)
+                                double3 xformOp:translate = (-8.634813752905757e-9, -0.09750104695558548, -2.9324032091437857e-9)
+
+                                over "Link6"
+                                {
+                                    vector3f physics:angularVelocity = (-2.570492e-8, -5.9684464e-7, -7.404021e-8)
+                                    rel physics:simulationOwner
+                                    vector3f physics:velocity = (-2.5513802e-9, 4.61025e-11, 4.2455517e-10)
+                                    quatf xformOp:orient = (-0.7071055, 0.707108, 8.570714e-8, -1.4445553e-7)
+                                    double3 xformOp:translate = (-1.3974077894829406e-8, 0.06317298859357834, 0.00020983863214496523)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+def "FlatGrid" (
+    prepend references = @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Environments/Grid/default_environment.usd@
+)
+{
+}
+
+over "Render"
+{
+    over "OmniverseKit"
+    {
+        over "HydraTextures"
+        {
+            over "omni_kit_widget_viewport_ViewportTexture_0"
+            {
+                bool omni:rtx:rt:ecoMode:enabled
+            }
         }
     }
 }
