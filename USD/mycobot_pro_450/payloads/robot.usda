@@ -4,13 +4,13 @@
         string creator = "URDF USD Converter v0.1.3"
     }
     defaultPrim = "mycobot_pro450"
-    doc = """Generated from Composed Stage of root layer /tmp/tmpukcfrim6/mycobot_pro450.usdc
+    doc = """Generated from Composed Stage of root layer /tmp/tmpnfhc_0fh/mycobot_pro450.usdc
 
 
-Generated from Composed Stage of root layer /tmp/urdf_import_mycobot_pro_450_7o6x8_pn/usdex_mycobot_pro_450/mycobot_pro450.usdc
+Generated from Composed Stage of root layer /tmp/urdf_import_mycobot_pro_450_vumyilfi/usdex_mycobot_pro_450/mycobot_pro450.usdc
 
 
-Generated from Composed Stage of root layer /tmp/urdf_import_mycobot_pro_450_7o6x8_pn/temp_mycobot_pro_450/mycobot_pro_450.usd
+Generated from Composed Stage of root layer /tmp/urdf_import_mycobot_pro_450_vumyilfi/temp_mycobot_pro_450/mycobot_pro_450.usd
 """
     kilogramsPerUnit = 1
     metersPerUnit = 1

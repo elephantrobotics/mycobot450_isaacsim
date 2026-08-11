@@ -7,8 +7,8 @@
                 double radius = 5
             }
             dictionary Perspective = {
-                double3 position = (1.091157779025646, 0.7487381474677861, 0.8564194926072172)
-                double3 target = (-1.193920237276305, -0.8747189638777193, -0.18008966783007796)
+                double3 position = (1.273133198810899, 0.6379629917257784, 0.4728139456320837)
+                double3 target = (-2.286749555558314, -1.0152737034563821, 0.05185832841926519)
             }
             dictionary Right = {
                 double3 position = (0, -5, 0)
@@ -22,30 +22,25 @@
         }
         string creator = "URDF USD Converter v0.1.3"
         dictionary omni_layer = {
-            string authoring_layer = "./payloads/Physics/physx.usda"
+            string authoring_layer = "./mycobot_pro_450.usda"
         }
         dictionary renderSettings = {
         }
     }
     defaultPrim = "mycobot_pro450"
-    doc = """Generated from Composed Stage of root layer /tmp/tmpukcfrim6/mycobot_pro450.usdc
+    doc = """Generated from Composed Stage of root layer /tmp/tmpnfhc_0fh/mycobot_pro450.usdc
 
 
-Generated from Composed Stage of root layer /tmp/urdf_import_mycobot_pro_450_7o6x8_pn/usdex_mycobot_pro_450/mycobot_pro450.usdc
+Generated from Composed Stage of root layer /tmp/urdf_import_mycobot_pro_450_vumyilfi/usdex_mycobot_pro_450/mycobot_pro450.usdc
 
 
-Generated from Composed Stage of root layer /tmp/urdf_import_mycobot_pro_450_7o6x8_pn/temp_mycobot_pro_450/mycobot_pro_450.usd
+Generated from Composed Stage of root layer /tmp/urdf_import_mycobot_pro_450_vumyilfi/temp_mycobot_pro_450/mycobot_pro_450.usd
 
 
-Generated from Composed Stage of root layer /home/elephant/Desktop/mycobot_pro_450/payloads/base.usd
+Generated from Composed Stage of root layer /home/elephant/Desktop/mycobot_pro_450_1/payloads/base.usd
 """
-    endTimeCode = 0
     kilogramsPerUnit = 1
     metersPerUnit = 1
-    startTimeCode = -1
-    subLayers = [
-        @./payloads/Physics/physx.usda@
-    ]
     upAxis = "Z"
 )
 
@@ -57,15 +52,17 @@ def Xform "mycobot_pro450" (
     append variantSets = "Physics"
 )
 {
-    over "Geometry"
+    over "Geometry" (
+        prepend apiSchemas = ["PhysxArticulationAPI"]
+    )
     {
+        float physxArticulation:sleepThreshold = 0.00005
+        int physxArticulation:solverPositionIterationCount = 64
+        int physxArticulation:solverVelocityIterationCount = 4
+        float physxArticulation:stabilizationThreshold = 0.00001
+
         over "base_link"
         {
-            quatf xformOp:orient = (1, 0, 0, 0)
-            float3 xformOp:scale = (1, 1, 1)
-            float3 xformOp:translate = (0, 0, 0)
-            token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-
             over "Link1"
             {
                 over "Link2"
@@ -93,15 +90,8 @@ def Xform "mycobot_pro450" (
         {
             float drive:angular:physics:damping = 50
             float drive:angular:physics:stiffness = 500000
-            bool[] isaac:actuator (
-                displayName = "Actuator"
-            )
-            string isaac:NameOverride (
-                displayName = "Joint Name Override"
-            )
-            token[] isaac:physics:DofOffsetOpOrder (
-                displayName = "Dof Offset Op Order"
-            )
+            float physics:lowerLimit = -162
+            float physics:upperLimit = 162
             float state:angular:physics:position = 0
             float state:angular:physics:velocity = 0
         }
@@ -110,6 +100,8 @@ def Xform "mycobot_pro450" (
         {
             float drive:angular:physics:damping = 50
             float drive:angular:physics:stiffness = 500000
+            float physics:lowerLimit = -125
+            float physics:upperLimit = 125
             float state:angular:physics:position = 0
             float state:angular:physics:velocity = 0
         }
@@ -117,7 +109,7 @@ def Xform "mycobot_pro450" (
         over "joint3"
         {
             float drive:angular:physics:damping = 50
-            float drive:angular:physics:stiffness = 50000
+            float drive:angular:physics:stiffness = 5000
             float state:angular:physics:position = 0
             float state:angular:physics:velocity = 0
         }
@@ -126,6 +118,8 @@ def Xform "mycobot_pro450" (
         {
             float drive:angular:physics:damping = 0.5
             float drive:angular:physics:stiffness = 500
+            float physics:lowerLimit = -162
+            float physics:upperLimit = 162
             float state:angular:physics:position = 0
             float state:angular:physics:velocity = 0
         }
@@ -134,14 +128,17 @@ def Xform "mycobot_pro450" (
         {
             float drive:angular:physics:damping = 0.5
             float drive:angular:physics:stiffness = 500
+            float physics:lowerLimit = -162
+            float physics:upperLimit = 162
             float state:angular:physics:position = 0
             float state:angular:physics:velocity = 0
         }
 
         over "joint6"
         {
-            float drive:angular:physics:damping = 0
             float drive:angular:physics:stiffness = 50
+            float physics:lowerLimit = -165
+            float physics:upperLimit = 165
             float state:angular:physics:position = 0
             float state:angular:physics:velocity = 0
         }
@@ -263,15 +260,21 @@ over "OmniverseKit_Persp" (
     float exposure:time = 0.02
     float focalLength = 18.147562
     float focusDistance = 400
-    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -2.988569184850031)
-    float3 xformOp:rotateXYZ = (69.70679, 1.5902774e-14, 125.39228)
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -3.9475511936914978)
+    float3 xformOp:rotateXYZ = (83.8785, 9.541664e-15, 114.910515)
     float3 xformOp:scale = (1, 1, 1)
-    double3 xformOp:translate = (1.091157779025646, 0.7487381474677861, 0.8564194926072172)
+    double3 xformOp:translate = (1.273133198810899, 0.6379629917257784, 0.4728139456320837)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
 }
 
 def PhysicsScene "PhysicsScene" (
     prepend apiSchemas = ["NewtonSceneAPI", "PhysxSceneAPI"]
+)
+{
+}
+
+def "FlatGrid" (
+    prepend references = @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Environments/Grid/default_environment.usd@
 )
 {
 }
