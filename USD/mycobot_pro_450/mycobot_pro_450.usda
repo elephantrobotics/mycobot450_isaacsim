@@ -7,8 +7,8 @@
                 double radius = 5
             }
             dictionary Perspective = {
-                double3 position = (1.273133198810899, 0.6379629917257784, 0.4728139456320837)
-                double3 target = (-2.286749555558314, -1.0152737034563821, 0.05185832841926519)
+                double3 position = (1.147346597388624, 0.491183529030365, 0.8758868155816236)
+                double3 target = (-2.1659666349471314, -0.9454389541286283, -0.7628455671787983)
             }
             dictionary Right = {
                 double3 position = (0, -5, 0)
@@ -260,10 +260,10 @@ over "OmniverseKit_Persp" (
     float exposure:time = 0.02
     float focalLength = 18.147562
     float focusDistance = 400
-    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -3.9475511936914978)
-    float3 xformOp:rotateXYZ = (83.8785, 9.541664e-15, 114.910515)
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -3.9657751520978564)
+    float3 xformOp:rotateXYZ = (65.59281, -0, 113.44112)
     float3 xformOp:scale = (1, 1, 1)
-    double3 xformOp:translate = (1.273133198810899, 0.6379629917257784, 0.4728139456320837)
+    double3 xformOp:translate = (1.147346597388624, 0.491183529030365, 0.8758868155816236)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
 }
 
@@ -277,6 +277,10 @@ def "FlatGrid" (
     prepend references = @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Environments/Grid/default_environment.usd@
 )
 {
+    over "SphereLight"
+    {
+        token visibility = "inherited"
+    }
 }
 
 over "OmniverseKit_Front" (
@@ -352,5 +356,35 @@ over "OmniverseKit_Top" (
     float3 xformOp:scale = (1, 1, 1)
     double3 xformOp:translate = (0, 0, 5)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+def Xform "Environment"
+{
+    token visibility = "inherited"
+    quatd xformOp:orient = (1, 0, 0, 0)
+    double3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def DistantLight "defaultLight" (
+        prepend apiSchemas = ["ShapingAPI"]
+    )
+    {
+        float inputs:angle = 1
+        float inputs:exposure = 1.5
+        float inputs:intensity = 3000
+        bool inputs:normalize = 1
+        float inputs:shaping:cone:angle = 180
+        float inputs:shaping:cone:softness
+        float inputs:shaping:focus
+        color3f inputs:shaping:focusTint
+        asset inputs:shaping:ies:file
+        custom int omni:rtx:usdluxVersion = 2505
+        token visibility = "inherited"
+        quatd xformOp:orient = (0.6532814824381883, 0.2705980500730985, 0.27059805007309845, 0.6532814824381882)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
 }
 
