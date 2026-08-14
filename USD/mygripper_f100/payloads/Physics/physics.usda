@@ -118,7 +118,7 @@ over "mygripper_f100"
         }
 
         def PhysicsRevoluteJoint "joint3_left_joint" (
-            prepend apiSchemas = ["NewtonMimicAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["NewtonMimicAPI"]
         )
         {
             float newton:mimicCoef1 = -1
@@ -139,7 +139,7 @@ over "mygripper_f100"
         }
 
         def PhysicsRevoluteJoint "joint1_left_joint" (
-            prepend apiSchemas = ["NewtonMimicAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["NewtonMimicAPI"]
         )
         {
             rel newton:mimicJoint = </mygripper_f100/Physics/joint2_left_joint>
@@ -159,7 +159,7 @@ over "mygripper_f100"
         }
 
         def PhysicsRevoluteJoint "joint2_right_joint" (
-            prepend apiSchemas = ["NewtonMimicAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["NewtonMimicAPI"]
         )
         {
             float newton:mimicCoef1 = -1
@@ -180,7 +180,7 @@ over "mygripper_f100"
         }
 
         def PhysicsRevoluteJoint "joint3_right_joint" (
-            prepend apiSchemas = ["NewtonMimicAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["NewtonMimicAPI"]
         )
         {
             rel newton:mimicJoint = </mygripper_f100/Physics/joint2_left_joint>
@@ -200,7 +200,7 @@ over "mygripper_f100"
         }
 
         def PhysicsRevoluteJoint "joint1_right_joint" (
-            prepend apiSchemas = ["NewtonMimicAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["NewtonMimicAPI"]
         )
         {
             float newton:mimicCoef1 = -1
