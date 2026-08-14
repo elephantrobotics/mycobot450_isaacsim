@@ -45,7 +45,7 @@
     </collision>
   </link>
   <link
-    name="J2_L_Link">
+    name="joint2_left_link">
     <inertial>
       <origin
         xyz="0.016477 -0.000609 5.1E-05"
@@ -53,7 +53,7 @@
       <mass
         value="0.015" />
       <inertia
-        ixx="1E-06"
+        ixx="2E-06"
         ixy="-9.61E-07"
         ixz="0"
         iyy="1.1E-05"
@@ -85,7 +85,7 @@
     </collision>
   </link>
   <joint
-    name="J2_L_Joint"
+    name="joint2_left_joint"
     type="revolute">
     <origin
       xyz="0.056064 0.017111 0"
@@ -93,7 +93,7 @@
     <parent
       link="f100_base_link" />
     <child
-      link="J2_L_Link" />
+      link="joint2_left_link" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -103,7 +103,7 @@
       velocity="0" />
   </joint>
   <link
-    name="J3_L_Link">
+    name="joint3_left_link">
     <inertial>
       <origin
         xyz="0.004031 0.00831 -0.000115"
@@ -143,15 +143,15 @@
     </collision>
   </link>
   <joint
-    name="J3_L_Joint"
+    name="joint3_left_joint"
     type="revolute">
     <origin
       xyz="0.059996 -0.0097778 -0.0005"
       rpy="0 0 0" />
     <parent
-      link="J2_L_Link" />
+      link="joint2_left_link" />
     <child
-      link="J3_L_Link" />
+      link="joint3_left_link" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -160,12 +160,12 @@
       effort="0"
       velocity="0" />
     <mimic
-      joint="J2_L_Joint"
+      joint="joint2_left_joint"
       multiplier="-1"
       offset="0" />
   </joint>
   <link
-    name="SL_L_Link">
+    name="joint1_left_link">
     <inertial>
       <origin
         xyz="0.032595 -0.003043 0"
@@ -186,7 +186,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/SL_L_Link.STL" />
+          filename="package://mygripper_f100_description/meshes/J1_L_Link.STL" />
       </geometry>
       <material
         name="">
@@ -200,12 +200,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/SL_L_Link.STL" />
+          filename="package://mygripper_f100_description/meshes/J1_L_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="SL_Joint"
+    name="joint1_left_joint"
     type="revolute">
     <origin
       xyz="0.033748 0.043203 0"
@@ -213,7 +213,7 @@
     <parent
       link="f100_base_link" />
     <child
-      link="SL_L_Link" />
+      link="joint1_left_link" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -222,12 +222,12 @@
       effort="0"
       velocity="0" />
     <mimic
-      joint="J2_L_Joint"
+      joint="joint2_left_joint"
       multiplier="1"
       offset="0" />
   </joint>
   <link
-    name="J2_R_Link">
+    name="joint2_right_link">
     <inertial>
       <origin
         xyz="0.019829 0.000952 -0.000143"
@@ -267,7 +267,7 @@
     </collision>
   </link>
   <joint
-    name="J2_R_joint"
+    name="joint2_right_joint"
     type="revolute">
     <origin
       xyz="0.056064 -0.019509 0"
@@ -275,7 +275,7 @@
     <parent
       link="f100_base_link" />
     <child
-      link="J2_R_Link" />
+      link="joint2_right_link" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -284,12 +284,12 @@
       effort="0"
       velocity="0" />
     <mimic
-      joint="J2_L_Joint"
+      joint="joint2_left_joint"
       multiplier="-1"
       offset="0" />
   </joint>
   <link
-    name="J3_R_Link">
+    name="joint3_right_link">
     <inertial>
       <origin
         xyz="0.004379 -0.008394 -7.5E-05"
@@ -329,15 +329,15 @@
     </collision>
   </link>
   <joint
-    name="J3_R_joint"
+    name="joint3_right_joint"
     type="revolute">
     <origin
       xyz="0.06 0.009756 0"
       rpy="0 0 0" />
     <parent
-      link="J2_R_Link" />
+      link="joint2_right_link" />
     <child
-      link="J3_R_Link" />
+      link="joint3_right_link" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -346,12 +346,12 @@
       effort="0"
       velocity="0" />
     <mimic
-      joint="J2_L_Joint"
+      joint="joint2_left_joint"
       multiplier="1"
       offset="0" />
   </joint>
   <link
-    name="SL_R_Link">
+    name="joint1_right_link">
     <inertial>
       <origin
         xyz="0.032592 0.003077 5E-05"
@@ -391,7 +391,7 @@
     </collision>
   </link>
   <joint
-    name="SL_R_joint"
+    name="joint1_right_joint"
     type="revolute">
     <origin
       xyz="0.033748 -0.045581 0"
@@ -399,7 +399,7 @@
     <parent
       link="f100_base_link" />
     <child
-      link="SL_R_Link" />
+      link="joint1_right_link" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -408,7 +408,7 @@
       effort="0"
       velocity="0" />
     <mimic
-      joint="J2_L_Joint"
+      joint="joint2_left_joint"
       multiplier="-1"
       offset="0" />
   </joint>

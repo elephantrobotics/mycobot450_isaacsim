@@ -4,13 +4,13 @@
         string creator = "URDF USD Converter v0.1.3"
     }
     defaultPrim = "mygripper_f100"
-    doc = """Generated from Composed Stage of root layer /tmp/tmpp_ww3ea6/mygripper_f100.usdc
+    doc = """Generated from Composed Stage of root layer /tmp/tmpwiprm2fu/mygripper_f100.usdc
 
 
-Generated from Composed Stage of root layer /tmp/urdf_import_mygripper_f100_n4gejtui/usdex_mygripper_f100/mygripper_f100.usdc
+Generated from Composed Stage of root layer /tmp/urdf_import_mygripper_f100_n2nz5pur/usdex_mygripper_f100/mygripper_f100.usdc
 
 
-Generated from Composed Stage of root layer /tmp/urdf_import_mygripper_f100_n4gejtui/temp_mygripper_f100/mygripper_f100.usd
+Generated from Composed Stage of root layer /tmp/urdf_import_mygripper_f100_n2nz5pur/temp_mygripper_f100/mygripper_f100.usd
 
 
 Generated from Composed Stage of root layer /home/elephant/mycobot450_isaacsim/USD/mygripper_f100/payloads/base.usd
@@ -27,37 +27,37 @@ over "mygripper_f100"
 {
     over "Physics"
     {
-        over "J2_L_Joint" (
+        over "joint2_left_joint" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
         }
 
-        over "J3_L_Joint" (
+        over "joint3_left_joint" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
         }
 
-        over "SL_Joint" (
+        over "joint1_left_joint" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
         }
 
-        over "J2_R_joint" (
+        over "joint2_right_joint" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
         }
 
-        over "J3_R_joint" (
+        over "joint3_right_joint" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {
         }
 
-        over "SL_R_joint" (
+        over "joint1_right_joint" (
             prepend apiSchemas = ["PhysxJointAPI"]
         )
         {

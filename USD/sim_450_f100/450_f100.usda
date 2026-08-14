@@ -7,8 +7,8 @@
                 double radius = 5
             }
             dictionary Perspective = {
-                double3 position = (1.1274249642408474, 0.4691763763659728, 0.9354588250526281)
-                double3 target = (-2.1858882680949083, -0.9674461067930205, -0.7032735577077938)
+                double3 position = (1.0870590079717104, 0.45167406485358574, 0.9154942171025692)
+                double3 target = (-2.1858882680949083, -0.9674461067930205, -0.7032735577077939)
             }
             dictionary Right = {
                 double3 position = (0, -5, 0)
@@ -99,7 +99,7 @@ def Xform "mycobot_pro450" (
             float physics:lowerLimit = -162
             float physics:upperLimit = 162
             float state:angular:physics:position = 0
-            float state:angular:physics:velocity = -0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint2"
@@ -109,7 +109,7 @@ def Xform "mycobot_pro450" (
             float physics:lowerLimit = -125
             float physics:upperLimit = 125
             float state:angular:physics:position = 0
-            float state:angular:physics:velocity = -0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint3"
@@ -117,7 +117,7 @@ def Xform "mycobot_pro450" (
             float drive:angular:physics:damping = 50
             float drive:angular:physics:stiffness = 5000
             float state:angular:physics:position = 0
-            float state:angular:physics:velocity = -0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint4"
@@ -127,7 +127,7 @@ def Xform "mycobot_pro450" (
             float physics:lowerLimit = -162
             float physics:upperLimit = 162
             float state:angular:physics:position = 0
-            float state:angular:physics:velocity = -0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint5"
@@ -137,7 +137,7 @@ def Xform "mycobot_pro450" (
             float physics:lowerLimit = -162
             float physics:upperLimit = 162
             float state:angular:physics:position = 0
-            float state:angular:physics:velocity = -0
+            float state:angular:physics:velocity = 0
         }
 
         over "joint6"
@@ -146,7 +146,7 @@ def Xform "mycobot_pro450" (
             float physics:lowerLimit = -165
             float physics:upperLimit = 165
             float state:angular:physics:position = 0
-            float state:angular:physics:velocity = -0
+            float state:angular:physics:velocity = 0
         }
     }
 
@@ -182,6 +182,80 @@ def Xform "mycobot_pro450" (
             over "J3_R_joint"
             {
                 float drive:angular:physics:targetPosition = 0
+            }
+
+            over "joint2_left_joint"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "joint1_left_joint"
+            {
+                float drive:angular:physics:damping = 0
+                float drive:angular:physics:stiffness = 0
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "joint2_right_joint"
+            {
+                float drive:angular:physics:damping = 0
+                float drive:angular:physics:stiffness = 0
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "joint1_right_joint"
+            {
+                float drive:angular:physics:damping = 0
+                float drive:angular:physics:stiffness = 0
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "joint3_left_joint"
+            {
+                float drive:angular:physics:damping = 0
+                float drive:angular:physics:stiffness = 0
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "joint3_right_joint"
+            {
+                float drive:angular:physics:damping = 0
+                float drive:angular:physics:stiffness = 0
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+
+        over "Geometry"
+        {
+            over "f100_base_link"
+            {
+                over "joint2_left_link"
+                {
+                    over "joint3_left_link"
+                    {
+                    }
+                }
+
+                over "joint1_left_link"
+                {
+                }
+
+                over "joint2_right_link"
+                {
+                    over "joint3_right_link"
+                    {
+                    }
+                }
+
+                over "joint1_right_link"
+                {
+                }
             }
         }
     }
@@ -314,10 +388,10 @@ over "OmniverseKit_Persp" (
     float exposure:time = 0.02
     float focalLength = 18.147562
     float focusDistance = 400
-    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -3.9657751520978564)
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -3.9174602796008906)
     float3 xformOp:rotateXYZ = (65.59281, -0, 113.44112)
     float3 xformOp:scale = (1, 1, 1)
-    double3 xformOp:translate = (1.1274249642408474, 0.4691763763659728, 0.9354588250526281)
+    double3 xformOp:translate = (1.0870590079717104, 0.45167406485358574, 0.9154942171025692)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
 }
 
@@ -328,6 +402,7 @@ def PhysicsScene "PhysicsScene" (
 }
 
 def "FlatGrid" (
+    active = true
     prepend references = @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Environments/Grid/default_environment.usd@
 )
 {
