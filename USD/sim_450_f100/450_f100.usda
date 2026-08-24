@@ -7,8 +7,8 @@
                 double radius = 5
             }
             dictionary Perspective = {
-                double3 position = (1.0870590079717104, 0.45167406485358574, 0.9154942171025692)
-                double3 target = (-2.1858882680949083, -0.9674461067930205, -0.7032735577077939)
+                double3 position = (1.2560377879426972, 0.5122266584407505, 0.955471228971909)
+                double3 target = (-2.16698835554221, -0.9719663451602786, -0.7375240887118997)
             }
             dictionary Right = {
                 double3 position = (0, -5, 0)
@@ -69,18 +69,35 @@ def Xform "mycobot_pro450" (
 
         over "base_link"
         {
+            rel physics:simulationOwner
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0, 0, 0)
+            token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
             over "Link1"
             {
+                rel physics:simulationOwner
+
                 over "Link2"
                 {
+                    rel physics:simulationOwner
+
                     over "Link3"
                     {
+                        rel physics:simulationOwner
+
                         over "Link4"
                         {
+                            rel physics:simulationOwner
+
                             over "Link5"
                             {
+                                rel physics:simulationOwner
+
                                 over "Link6"
                                 {
+                                    rel physics:simulationOwner
                                 }
                             }
                         }
@@ -96,6 +113,16 @@ def Xform "mycobot_pro450" (
         {
             float drive:angular:physics:damping = 50
             float drive:angular:physics:stiffness = 500000
+            float drive:angular:physics:targetPosition = 0.1
+            bool[] isaac:actuator (
+                displayName = "Actuator"
+            )
+            string isaac:NameOverride (
+                displayName = "Joint Name Override"
+            )
+            token[] isaac:physics:DofOffsetOpOrder (
+                displayName = "Dof Offset Op Order"
+            )
             float physics:lowerLimit = -162
             float physics:upperLimit = 162
             float state:angular:physics:position = 0
@@ -116,6 +143,8 @@ def Xform "mycobot_pro450" (
         {
             float drive:angular:physics:damping = 50
             float drive:angular:physics:stiffness = 5000
+            float physics:lowerLimit = -154
+            float physics:upperLimit = 154
             float state:angular:physics:position = 0
             float state:angular:physics:velocity = 0
         }
@@ -143,6 +172,7 @@ def Xform "mycobot_pro450" (
         over "joint6"
         {
             float drive:angular:physics:stiffness = 50
+            float drive:angular:physics:targetPosition = 0
             float physics:lowerLimit = -165
             float physics:upperLimit = 165
             float state:angular:physics:position = 0
@@ -154,38 +184,20 @@ def Xform "mycobot_pro450" (
     {
         over "Physics"
         {
-            over "SL_Joint"
-            {
-                float drive:angular:physics:targetPosition = 0
-            }
-
-            over "J2_L_Joint"
-            {
-                float drive:angular:physics:targetPosition = 0
-            }
-
-            over "J2_R_joint"
-            {
-                float drive:angular:physics:targetPosition = 0
-            }
-
-            over "SL_R_joint"
-            {
-                float drive:angular:physics:targetPosition = 0
-            }
-
-            over "J3_L_Joint"
-            {
-                float drive:angular:physics:targetPosition = 0
-            }
-
-            over "J3_R_joint"
-            {
-                float drive:angular:physics:targetPosition = 0
-            }
-
             over "joint2_left_joint"
             {
+                float drive:angular:physics:targetPosition = 0
+                bool[] isaac:actuator (
+                    displayName = "Actuator"
+                )
+                string isaac:NameOverride (
+                    displayName = "Joint Name Override"
+                )
+                token[] isaac:physics:DofOffsetOpOrder (
+                    displayName = "Dof Offset Op Order"
+                )
+                float physics:lowerLimit = -57.98333
+                float physics:upperLimit = 0
                 float state:angular:physics:position = 0
                 float state:angular:physics:velocity = 0
             }
@@ -194,6 +206,15 @@ def Xform "mycobot_pro450" (
             {
                 float drive:angular:physics:damping = 0
                 float drive:angular:physics:stiffness = 0
+                bool[] isaac:actuator (
+                    displayName = "Actuator"
+                )
+                string isaac:NameOverride (
+                    displayName = "Joint Name Override"
+                )
+                token[] isaac:physics:DofOffsetOpOrder (
+                    displayName = "Dof Offset Op Order"
+                )
                 float state:angular:physics:position = 0
                 float state:angular:physics:velocity = 0
             }
@@ -202,6 +223,15 @@ def Xform "mycobot_pro450" (
             {
                 float drive:angular:physics:damping = 0
                 float drive:angular:physics:stiffness = 0
+                bool[] isaac:actuator (
+                    displayName = "Actuator"
+                )
+                string isaac:NameOverride (
+                    displayName = "Joint Name Override"
+                )
+                token[] isaac:physics:DofOffsetOpOrder (
+                    displayName = "Dof Offset Op Order"
+                )
                 float state:angular:physics:position = 0
                 float state:angular:physics:velocity = 0
             }
@@ -235,26 +265,36 @@ def Xform "mycobot_pro450" (
         {
             over "f100_base_link"
             {
+                rel physics:simulationOwner
+
                 over "joint2_left_link"
                 {
+                    rel physics:simulationOwner
+
                     over "joint3_left_link"
                     {
+                        rel physics:simulationOwner
                     }
                 }
 
                 over "joint1_left_link"
                 {
+                    rel physics:simulationOwner
                 }
 
                 over "joint2_right_link"
                 {
+                    rel physics:simulationOwner
+
                     over "joint3_right_link"
                     {
+                        rel physics:simulationOwner
                     }
                 }
 
                 over "joint1_right_link"
                 {
+                    rel physics:simulationOwner
                 }
             }
         }
@@ -388,10 +428,10 @@ over "OmniverseKit_Persp" (
     float exposure:time = 0.02
     float focalLength = 18.147562
     float focusDistance = 400
-    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -3.9174602796008906)
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -4.097092871368514)
     float3 xformOp:rotateXYZ = (65.59281, -0, 113.44112)
     float3 xformOp:scale = (1, 1, 1)
-    double3 xformOp:translate = (1.0870590079717104, 0.45167406485358574, 0.9154942171025692)
+    double3 xformOp:translate = (1.2560377879426972, 0.5122266584407505, 0.955471228971909)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
 }
 
@@ -409,6 +449,15 @@ def "FlatGrid" (
     over "SphereLight"
     {
         token visibility = "inherited"
+    }
+
+    over "Environment"
+    {
+        over "Geometry" (
+            active = true
+        )
+        {
+        }
     }
 }
 
@@ -514,6 +563,223 @@ def Xform "Environment"
         double3 xformOp:scale = (1, 1, 1)
         double3 xformOp:translate = (0, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+
+def OmniGraph "ActionGraph"
+{
+    token evaluationMode = "Automatic"
+    token evaluator:type = "execution"
+    token fabricCacheBacking = "StageWithoutHistory"
+    int2 fileFormatVersion = (1, 9)
+    token pipelineStage = "pipelineStageSimulation"
+
+    def OmniGraphNode "OnPlaybackTick"
+    {
+        token node:type = "omni.graph.action.OnPlaybackTick"
+        int node:typeVersion = 2
+        custom double outputs:deltaSeconds
+        custom double outputs:frame
+        custom uint outputs:tick (
+            customData = {
+                bool isExecution = 1
+            }
+        )
+        custom double outputs:time
+    }
+
+    def OmniGraphNode "ReadSimTime" (
+        prepend apiSchemas = ["NodeGraphNodeAPI"]
+    )
+    {
+        custom uint64 inputs:referenceTimeDenominator
+        custom int64 inputs:referenceTimeNumerator
+        custom bool inputs:resetOnStop
+        token node:type = "isaacsim.core.nodes.IsaacReadSimulationTime"
+        int node:typeVersion = 1
+        custom double outputs:simulationTime
+        uniform float2 ui:nodegraph:node:pos = (-583.689, -230.15971)
+    }
+
+    def OmniGraphNode "ReadJointState" (
+        prepend apiSchemas = ["NodeGraphNodeAPI"]
+    )
+    {
+        custom uint inputs:execIn (
+            customData = {
+                bool isExecution = 1
+            }
+        )
+        prepend uint inputs:execIn.connect = </ActionGraph/OnPlaybackTick.outputs:tick>
+        custom rel inputs:prim = </mycobot_pro450/Geometry> (
+            customData = {
+                dictionary omni = {
+                    dictionary graph = {
+                        string relType = "target"
+                    }
+                }
+            }
+        )
+        token node:type = "isaacsim.sensors.physics.IsaacReadJointState"
+        int node:typeVersion = 1
+        custom uint outputs:execOut (
+            customData = {
+                bool isExecution = 1
+            }
+        )
+        custom uchar[] outputs:jointDofTypes
+        custom double[] outputs:jointEfforts
+        custom token[] outputs:jointNames
+        custom double[] outputs:jointPositions
+        custom double[] outputs:jointVelocities
+        custom float outputs:sensorTime
+        custom float outputs:stageMetersPerUnit
+        uniform float2 ui:nodegraph:node:pos = (-580.81067, -33.749123)
+    }
+
+    def OmniGraphNode "Context" (
+        prepend apiSchemas = ["NodeGraphNodeAPI"]
+    )
+    {
+        custom uchar inputs:domain_id
+        custom bool inputs:useDomainIDEnvVar
+        token node:type = "isaacsim.ros2.bridge.ROS2Context"
+        int node:typeVersion = 2
+        custom uint64 outputs:context
+        uniform float2 ui:nodegraph:node:pos = (-975.06146, 360.98648)
+    }
+
+    def OmniGraphNode "PublishJointState" (
+        prepend apiSchemas = ["NodeGraphNodeAPI"]
+    )
+    {
+        custom uint64 inputs:context
+        prepend uint64 inputs:context.connect = </ActionGraph/Context.outputs:context>
+        custom uint inputs:execIn (
+            customData = {
+                bool isExecution = 1
+            }
+        )
+        prepend uint inputs:execIn.connect = </ActionGraph/ReadJointState.outputs:execOut>
+        custom uchar[] inputs:jointDofTypes
+        prepend uchar[] inputs:jointDofTypes.connect = </ActionGraph/ReadJointState.outputs:jointDofTypes>
+        custom double[] inputs:jointEfforts
+        prepend double[] inputs:jointEfforts.connect = </ActionGraph/ReadJointState.outputs:jointEfforts>
+        custom token[] inputs:jointNames
+        prepend token[] inputs:jointNames.connect = </ActionGraph/ReadJointState.outputs:jointNames>
+        custom double[] inputs:jointPositions
+        prepend double[] inputs:jointPositions.connect = </ActionGraph/ReadJointState.outputs:jointPositions>
+        custom double[] inputs:jointVelocities
+        prepend double[] inputs:jointVelocities.connect = </ActionGraph/ReadJointState.outputs:jointVelocities>
+        custom string inputs:nodeNamespace
+        custom string inputs:qosProfile
+        custom uint64 inputs:queueSize
+        custom float inputs:sensorTime
+        prepend float inputs:sensorTime.connect = </ActionGraph/ReadJointState.outputs:sensorTime>
+        custom float inputs:stageMetersPerUnit
+        prepend float inputs:stageMetersPerUnit.connect = </ActionGraph/ReadJointState.outputs:stageMetersPerUnit>
+        custom rel inputs:targetPrim (
+            customData = {
+                dictionary omni = {
+                    dictionary graph = {
+                        string relType = "target"
+                    }
+                }
+            }
+        )
+        custom double inputs:timeStamp
+        custom string inputs:topicName = "isaac_joint_states"
+        token node:type = "isaacsim.ros2.bridge.ROS2PublishJointState"
+        int node:typeVersion = 1
+        uniform float2 ui:nodegraph:node:pos = (-19.950577, -14.54432)
+    }
+
+    def OmniGraphNode "SubscribeJointState" (
+        prepend apiSchemas = ["NodeGraphNodeAPI"]
+    )
+    {
+        custom uint64 inputs:context
+        prepend uint64 inputs:context.connect = </ActionGraph/Context.outputs:context>
+        custom uint inputs:execIn (
+            customData = {
+                bool isExecution = 1
+            }
+        )
+        prepend uint inputs:execIn.connect = </ActionGraph/OnPlaybackTick.outputs:tick>
+        custom string inputs:nodeNamespace
+        custom string inputs:qosProfile
+        custom uint64 inputs:queueSize
+        custom string inputs:topicName = "isaac_joint_commands"
+        token node:type = "isaacsim.ros2.bridge.ROS2SubscribeJointState"
+        int node:typeVersion = 2
+        custom double[] outputs:effortCommand
+        custom uint outputs:execOut (
+            customData = {
+                bool isExecution = 1
+            }
+        )
+        custom token[] outputs:jointNames
+        custom double[] outputs:positionCommand
+        custom double outputs:timeStamp
+        custom double[] outputs:velocityCommand
+        uniform float2 ui:nodegraph:node:pos = (-585.8107, 321.58374)
+    }
+
+    def OmniGraphNode "ArticulationController" (
+        prepend apiSchemas = ["NodeGraphNodeAPI"]
+    )
+    {
+        custom double[] inputs:effortCommand
+        prepend double[] inputs:effortCommand.connect = </ActionGraph/SubscribeJointState.outputs:effortCommand>
+        custom uint inputs:execIn (
+            customData = {
+                bool isExecution = 1
+            }
+        )
+        prepend uint inputs:execIn.connect = </ActionGraph/OnPlaybackTick.outputs:tick>
+        custom int[] inputs:jointIndices
+        custom token[] inputs:jointNames
+        prepend token[] inputs:jointNames.connect = </ActionGraph/SubscribeJointState.outputs:jointNames>
+        custom double[] inputs:positionCommand
+        prepend double[] inputs:positionCommand.connect = </ActionGraph/SubscribeJointState.outputs:positionCommand>
+        custom string inputs:robotPath = ""
+        custom rel inputs:targetPrim = </mycobot_pro450> (
+            customData = {
+                dictionary omni = {
+                    dictionary graph = {
+                        string relType = "target"
+                    }
+                }
+            }
+        )
+        custom double[] inputs:velocityCommand
+        prepend double[] inputs:velocityCommand.connect = </ActionGraph/SubscribeJointState.outputs:velocityCommand>
+        token node:type = "isaacsim.core.nodes.IsaacArticulationController"
+        int node:typeVersion = 1
+        uniform float2 ui:nodegraph:node:pos = (-28.569412, 400.15897)
+    }
+
+    def OmniGraphNode "PublishClock" (
+        prepend apiSchemas = ["NodeGraphNodeAPI"]
+    )
+    {
+        custom uint64 inputs:context
+        prepend uint64 inputs:context.connect = </ActionGraph/Context.outputs:context>
+        custom uint inputs:execIn (
+            customData = {
+                bool isExecution = 1
+            }
+        )
+        prepend uint inputs:execIn.connect = </ActionGraph/OnPlaybackTick.outputs:tick>
+        custom string inputs:nodeNamespace
+        custom string inputs:qosProfile
+        custom uint64 inputs:queueSize
+        custom double inputs:timeStamp
+        prepend double inputs:timeStamp.connect = </ActionGraph/ReadSimTime.outputs:simulationTime>
+        custom string inputs:topicName
+        token node:type = "isaacsim.ros2.bridge.ROS2PublishClock"
+        int node:typeVersion = 1
+        uniform float2 ui:nodegraph:node:pos = (-20.069008, -267.23727)
     }
 }
 
