@@ -33,9 +33,9 @@ ARM_JOINT_NAMES = (
     "joint6",
 )
 GRIPPER_DRIVE_JOINT = "joint2_left_joint"
-# Keep in sync with slider_control.py: 0 rad = closed, -1.012 rad = open.
+# Keep in sync with slider_control.py: 0 rad = closed, -58 deg = open.
 GRIPPER_CLOSED_RAD = 0.0
-GRIPPER_OPEN_RAD = -1.012
+GRIPPER_OPEN_RAD = math.radians(-58)
 
 
 class Talker(Node):

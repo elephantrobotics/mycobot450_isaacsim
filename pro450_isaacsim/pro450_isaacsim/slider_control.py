@@ -32,9 +32,9 @@ ARM_JOINT_NAMES = (
     "joint6",
 )
 GRIPPER_DRIVE_JOINT = "joint2_left_joint"
-# URDF/USD: closed at 0 rad, fully open at -1.012 rad (~-58 deg).
+# URDF/USD: closed at 0 rad, fully open at -58 deg.
 GRIPPER_CLOSED_RAD = 0.0
-GRIPPER_OPEN_RAD = -1.012
+GRIPPER_OPEN_RAD = math.radians(-58)
 GRIPPER_MIN_INTERVAL_SEC = 0.3
 
 

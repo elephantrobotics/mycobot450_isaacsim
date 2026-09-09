@@ -111,7 +111,7 @@ over "mygripper_f100"
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
             quatf physics:localRot1 = (0, -1, 0, 0)
-            float physics:lowerLimit = -57.98333
+            float physics:lowerLimit = -58
             float physics:upperLimit = 0
             custom float urdf:limit:effort = 0
             custom float urdf:limit:velocity = 0
@@ -132,8 +132,8 @@ over "mygripper_f100"
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
             quatf physics:localRot1 = (0, -1, 0, 0)
-            float physics:lowerLimit = -57.98333
-            float physics:upperLimit = 57.98333
+            float physics:lowerLimit = -58
+            float physics:upperLimit = 58
             custom float urdf:limit:effort = 0
             custom float urdf:limit:velocity = 0
         }
@@ -152,8 +152,8 @@ over "mygripper_f100"
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
             quatf physics:localRot1 = (0, -1, 0, 0)
-            float physics:lowerLimit = -57.98333
-            float physics:upperLimit = 57.98333
+            float physics:lowerLimit = -58
+            float physics:upperLimit = 58
             custom float urdf:limit:effort = 0
             custom float urdf:limit:velocity = 0
         }
@@ -173,8 +173,8 @@ over "mygripper_f100"
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
             quatf physics:localRot1 = (0, -1, 0, 0)
-            float physics:lowerLimit = -57.98333
-            float physics:upperLimit = 57.98333
+            float physics:lowerLimit = -58
+            float physics:upperLimit = 58
             custom float urdf:limit:effort = 0
             custom float urdf:limit:velocity = 0
         }
@@ -193,8 +193,8 @@ over "mygripper_f100"
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
             quatf physics:localRot1 = (0, -1, 0, 0)
-            float physics:lowerLimit = -57.98333
-            float physics:upperLimit = 57.98333
+            float physics:lowerLimit = -58
+            float physics:upperLimit = 58
             custom float urdf:limit:effort = 0
             custom float urdf:limit:velocity = 0
         }
@@ -214,8 +214,8 @@ over "mygripper_f100"
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
             quatf physics:localRot1 = (0, -1, 0, 0)
-            float physics:lowerLimit = -57.98333
-            float physics:upperLimit = 57.98333
+            float physics:lowerLimit = -58
+            float physics:upperLimit = 58
             custom float urdf:limit:effort = 0
             custom float urdf:limit:velocity = 0
         }

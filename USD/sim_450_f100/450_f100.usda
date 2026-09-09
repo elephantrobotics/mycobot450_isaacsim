@@ -186,7 +186,7 @@ def Xform "mycobot_pro450" (
         {
             over "joint2_left_joint"
             {
-                float drive:angular:physics:targetPosition = 0
+                float drive:angular:physics:targetPosition = -58
                 bool[] isaac:actuator (
                     displayName = "Actuator"
                 )
@@ -196,9 +196,9 @@ def Xform "mycobot_pro450" (
                 token[] isaac:physics:DofOffsetOpOrder (
                     displayName = "Dof Offset Op Order"
                 )
-                float physics:lowerLimit = -57.98333
+                float physics:lowerLimit = -58
                 float physics:upperLimit = 0
-                float state:angular:physics:position = 0
+                float state:angular:physics:position = -58
                 float state:angular:physics:velocity = 0
             }
 
@@ -215,7 +215,7 @@ def Xform "mycobot_pro450" (
                 token[] isaac:physics:DofOffsetOpOrder (
                     displayName = "Dof Offset Op Order"
                 )
-                float state:angular:physics:position = 0
+                float state:angular:physics:position = -58
                 float state:angular:physics:velocity = 0
             }
 
@@ -232,7 +232,7 @@ def Xform "mycobot_pro450" (
                 token[] isaac:physics:DofOffsetOpOrder (
                     displayName = "Dof Offset Op Order"
                 )
-                float state:angular:physics:position = 0
+                float state:angular:physics:position = 58
                 float state:angular:physics:velocity = 0
             }
 
@@ -240,7 +240,7 @@ def Xform "mycobot_pro450" (
             {
                 float drive:angular:physics:damping = 0
                 float drive:angular:physics:stiffness = 0
-                float state:angular:physics:position = 0
+                float state:angular:physics:position = 58
                 float state:angular:physics:velocity = 0
             }
 
@@ -248,7 +248,7 @@ def Xform "mycobot_pro450" (
             {
                 float drive:angular:physics:damping = 0
                 float drive:angular:physics:stiffness = 0
-                float state:angular:physics:position = 0
+                float state:angular:physics:position = 58
                 float state:angular:physics:velocity = 0
             }
 
@@ -256,7 +256,7 @@ def Xform "mycobot_pro450" (
             {
                 float drive:angular:physics:damping = 0
                 float drive:angular:physics:stiffness = 0
-                float state:angular:physics:position = 0
+                float state:angular:physics:position = -58
                 float state:angular:physics:velocity = 0
             }
         }
@@ -270,31 +270,37 @@ def Xform "mycobot_pro450" (
                 over "joint2_left_link"
                 {
                     rel physics:simulationOwner
+                    quatf xformOp:orient = (0.87461971, 0, 0, 0.48480962)
 
                     over "joint3_left_link"
                     {
                         rel physics:simulationOwner
+                        quatf xformOp:orient = (0.87461971, 0, 0, -0.48480962)
                     }
                 }
 
                 over "joint1_left_link"
                 {
                     rel physics:simulationOwner
+                    quatf xformOp:orient = (0.87461971, 0, 0, 0.48480962)
                 }
 
                 over "joint2_right_link"
                 {
                     rel physics:simulationOwner
+                    quatf xformOp:orient = (0.87461971, 0, 0, -0.48480962)
 
                     over "joint3_right_link"
                     {
                         rel physics:simulationOwner
+                        quatf xformOp:orient = (0.87461971, 0, 0, 0.48480962)
                     }
                 }
 
                 over "joint1_right_link"
                 {
                     rel physics:simulationOwner
+                    quatf xformOp:orient = (0.87461971, 0, 0, -0.48480962)
                 }
             }
         }
