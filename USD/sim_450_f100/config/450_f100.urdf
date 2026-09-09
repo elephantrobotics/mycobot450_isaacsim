@@ -668,7 +668,7 @@
     <parent link="f100_base_link"/>
     <child link="joint2_left_link"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-1.01229097" upper="0" effort="0" velocity="0"/>
+    <limit lower="-1.01229097" upper="0" effort="0" velocity="1.0"/>
     <dynamics friction="0"/>
     <!-- isaac:source_drive {"armature": 0.0, "drive": {"damping": 0.018818411976099014, "max_force": Infinity, "stiffness": 0.07222844660282135, "target_position": -58.0}, "instance": "angular", "source": "physx"} -->
   </joint>
@@ -677,7 +677,7 @@
     <parent link="f100_base_link"/>
     <child link="joint1_left_link"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="0"/>
+    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="1.0"/>
     <dynamics friction="0"/>
     <mimic joint="joint2_left_joint" multiplier="1" offset="0"/>
     <!-- isaac:source_drive {"armature": 0.0, "instance": "angular", "source": "physx"} -->
@@ -687,7 +687,7 @@
     <parent link="f100_base_link"/>
     <child link="joint2_right_link"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="0"/>
+    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="1.0"/>
     <dynamics friction="0"/>
     <mimic joint="joint2_left_joint" multiplier="-1" offset="0"/>
     <!-- isaac:source_drive {"armature": 0.0, "instance": "angular", "source": "physx"} -->
@@ -697,7 +697,7 @@
     <parent link="f100_base_link"/>
     <child link="joint1_right_link"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="0"/>
+    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="1.0"/>
     <dynamics friction="0"/>
     <mimic joint="joint2_left_joint" multiplier="-1" offset="0"/>
     <!-- isaac:source_drive {"armature": 0.0, "instance": "angular", "source": "physx"} -->
@@ -707,7 +707,7 @@
     <parent link="joint2_left_link"/>
     <child link="joint3_left_link"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="0"/>
+    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="1.0"/>
     <dynamics friction="0"/>
     <mimic joint="joint2_left_joint" multiplier="-1" offset="0"/>
     <!-- isaac:source_drive {"armature": 0.0, "instance": "angular", "source": "physx"} -->
@@ -717,9 +717,22 @@
     <parent link="joint2_right_link"/>
     <child link="joint3_right_link"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="0"/>
+    <limit lower="-1.01229097" upper="1.01229097" effort="0" velocity="1.0"/>
     <dynamics friction="0"/>
     <mimic joint="joint2_left_joint" multiplier="1" offset="0"/>
     <!-- isaac:source_drive {"armature": 0.0, "instance": "angular", "source": "physx"} -->
+  </joint>
+  <!-- Planning TCP only (cuMotion / PINK). +Z is the F100 finger approach (+X of f100_base_link). -->
+  <link name="tcp">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <joint name="tcp_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 1.57079632679 0"/>
+    <parent link="f100_base_link"/>
+    <child link="tcp"/>
   </joint>
 </robot>

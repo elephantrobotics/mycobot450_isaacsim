@@ -1,6 +1,8 @@
 format: xrdf
 format_version: 2.0
 
+# Mimic joints cannot appear here: cuMotion rejects default positions on
+# joints driven by an auxiliary c-space / mimic parent.
 default_joint_positions:
   joint1: 0.0
   joint2: 0.0
@@ -8,12 +10,8 @@ default_joint_positions:
   joint4: 0.0
   joint5: 0.0
   joint6: 0.0
-  joint2_left_joint: -1.012291
-  joint1_left_joint: 0.0
-  joint2_right_joint: 0.0
-  joint1_right_joint: 0.0
-  joint3_left_joint: 0.0
-  joint3_right_joint: 0.0
+  # Must be strictly inside URDF limits [-1.01229097, 0]; endpoints are rejected.
+  joint2_left_joint: -1.01
 
 cspace:
   joint_names:
@@ -26,7 +24,8 @@ cspace:
   acceleration_limits: [12.0, 12.0, 12.0, 12.0, 12.0, 12.0]
   jerk_limits: [500.0, 500.0, 500.0, 500.0, 500.0, 500.0]
 
-tool_frames: ["f100_base_link"]
+# tcp +Z is the F100 approach axis (f100_base_link +X). Use Z-down setpoints.
+tool_frames: ["tcp"]
 
 world_collision:
   geometry: "pro450_f100_collision_spheres"

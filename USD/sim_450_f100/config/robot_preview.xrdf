@@ -11,12 +11,7 @@ default_joint_positions:
   joint4: 0.0
   joint5: 0.0
   joint6: 0.0
-  joint2_left_joint: -1.012291
-  joint1_left_joint: 0.0
-  joint2_right_joint: 0.0
-  joint1_right_joint: 0.0
-  joint3_left_joint: 0.0
-  joint3_right_joint: 0.0
+  joint2_left_joint: -1.01
 
 cspace:
   joint_names:
