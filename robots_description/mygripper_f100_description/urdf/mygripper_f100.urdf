@@ -372,7 +372,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/SL_R_Link.STL" />
+          filename="package://mygripper_f100_description/meshes/J1_R_Link.STL" />
       </geometry>
       <material
         name="">
@@ -386,7 +386,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mygripper_f100_description/meshes/SL_R_Link.STL" />
+          filename="package://mygripper_f100_description/meshes/J1_R_Link.STL" />
       </geometry>
     </collision>
   </link>
