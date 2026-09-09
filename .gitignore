@@ -5,3 +5,4 @@ install/
 log/
 /CMakeLists.txt
 __pycache__/
+pyrightconfig.json

@@ -42,7 +42,7 @@ def Xform "mygripper_f100" (
         def Xform "f100_base_link"
         {
             def Xform "f100_base_link" (
-                instanceable = true
+                instanceable = false
                 prepend references = @./instances.usda@</Instances/f100_base_link>
             )
             {
@@ -60,7 +60,7 @@ def Xform "mygripper_f100" (
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                 def Xform "J2_L_Link" (
-                    instanceable = true
+                    instanceable = false
                     prepend references = @./instances.usda@</Instances/J2_L_Link>
                 )
                 {
@@ -78,7 +78,7 @@ def Xform "mygripper_f100" (
                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                     def Xform "J3_L_Link" (
-                        instanceable = true
+                        instanceable = false
                         prepend references = @./instances.usda@</Instances/J3_L_Link>
                     )
                     {
@@ -90,7 +90,7 @@ def Xform "mygripper_f100" (
 
                     def Xform "J3_L_Link_1" (
                         displayName = "J3_L_Link"
-                        instanceable = true
+                        instanceable = false
                         prepend references = @./instances.usda@</Instances/J3_L_Link_1>
                     )
                     {
@@ -103,7 +103,7 @@ def Xform "mygripper_f100" (
 
                 def Xform "J2_L_Link_1" (
                     displayName = "J2_L_Link"
-                    instanceable = true
+                    instanceable = false
                     prepend references = @./instances.usda@</Instances/J2_L_Link_1>
                 )
                 {
@@ -122,7 +122,7 @@ def Xform "mygripper_f100" (
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                 def Xform "J1_L_Link" (
-                    instanceable = true
+                    instanceable = false
                     prepend references = @./instances.usda@</Instances/J1_L_Link>
                 )
                 {
@@ -134,7 +134,7 @@ def Xform "mygripper_f100" (
 
                 def Xform "J1_L_Link_1" (
                     displayName = "J1_L_Link"
-                    instanceable = true
+                    instanceable = false
                     prepend references = @./instances.usda@</Instances/J1_L_Link_1>
                 )
                 {
@@ -153,7 +153,7 @@ def Xform "mygripper_f100" (
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                 def Xform "J2_R_Link" (
-                    instanceable = true
+                    instanceable = false
                     prepend references = @./instances.usda@</Instances/J2_R_Link>
                 )
                 {
@@ -171,7 +171,7 @@ def Xform "mygripper_f100" (
                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                     def Xform "J3_R_Link" (
-                        instanceable = true
+                        instanceable = false
                         prepend references = @./instances.usda@</Instances/J3_R_Link>
                     )
                     {
@@ -183,7 +183,7 @@ def Xform "mygripper_f100" (
 
                     def Xform "J3_R_Link_1" (
                         displayName = "J3_R_Link"
-                        instanceable = true
+                        instanceable = false
                         prepend references = @./instances.usda@</Instances/J3_R_Link_1>
                     )
                     {
@@ -196,7 +196,7 @@ def Xform "mygripper_f100" (
 
                 def Xform "J2_R_Link_1" (
                     displayName = "J2_R_Link"
-                    instanceable = true
+                    instanceable = false
                     prepend references = @./instances.usda@</Instances/J2_R_Link_1>
                 )
                 {
@@ -215,7 +215,7 @@ def Xform "mygripper_f100" (
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
                 def Xform "SL_R_Link" (
-                    instanceable = true
+                    instanceable = false
                     prepend references = @./instances.usda@</Instances/SL_R_Link>
                 )
                 {
@@ -227,7 +227,7 @@ def Xform "mygripper_f100" (
 
                 def Xform "SL_R_Link_1" (
                     displayName = "SL_R_Link"
-                    instanceable = true
+                    instanceable = false
                     prepend references = @./instances.usda@</Instances/SL_R_Link_1>
                 )
                 {
@@ -240,7 +240,7 @@ def Xform "mygripper_f100" (
 
             def Xform "f100_base_link_1" (
                 displayName = "f100_base_link"
-                instanceable = true
+                instanceable = false
                 prepend references = @./instances.usda@</Instances/f100_base_link_1>
             )
             {
