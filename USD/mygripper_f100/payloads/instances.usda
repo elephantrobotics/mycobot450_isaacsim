@@ -120,12 +120,19 @@ def Scope "Instances"
         prepend references = @./geometries.usd@</Geometries/J3_L_Link>
     )
     {
-        over "J3_L_Link" (
-            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+        def Material "fingertip_material" (
+            prepend references = @./materials.usda@</Materials/fingertip_rubber>
         )
         {
-            token physics:approximation = "convexHull"
+        }
+
+        over "J3_L_Link" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
             token purpose = "guide"
+            prepend rel material:binding:physics = </Instances/J3_L_Link_1/fingertip_material>
         }
     }
 
@@ -228,12 +235,19 @@ def Scope "Instances"
         prepend references = @./geometries.usd@</Geometries/J3_R_Link>
     )
     {
-        over "J3_R_Link" (
-            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+        def Material "fingertip_material" (
+            prepend references = @./materials.usda@</Materials/fingertip_rubber>
         )
         {
-            token physics:approximation = "convexHull"
+        }
+
+        over "J3_R_Link" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
             token purpose = "guide"
+            prepend rel material:binding:physics = </Instances/J3_R_Link_1/fingertip_material>
         }
     }
 
