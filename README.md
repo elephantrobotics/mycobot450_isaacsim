@@ -2,7 +2,7 @@
 
 Isaac Sim / ROS 2 project for **myCobot Pro 450** and **myGripper F100**.
 
-**In development. Target runtime is NVIDIA Isaac Sim 6.1.0** (`6.1.0-dev`). The Isaac Sim 4.5.0 / ROS 2 Humble / MoveIt workflow no longer applies. Use `6.0.1-dev` if you still need Isaac Sim 6.0.1.
+**Target runtime is NVIDIA Isaac Sim 6.1.0** (`6.1.0` branch). The Isaac Sim 4.5.0 / ROS 2 Humble / MoveIt workflow no longer applies. Use the `6.0.1` branch if you need Isaac Sim 6.0.1.
 
 ## Environment
 
